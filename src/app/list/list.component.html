@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+          <thead>
+            <tr>
+              <td>Titre</td>
+              <td>Date</td>
+              <td>Résume</td>
+              <td>Photo</td>
+              <td>Like</td>
+              <td>You Like</td>
+              <td>It</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of listPost, let i = index" [ngClass]="{'bg-laura': post.like > 10}">
+                <td>{{ post.titre }}</td>
+                <td>{{ post.date }}</td>
+                <td>{{ post.resume }}</td>
+                <td>{{ post.img }}</td>
+                <!--<td>{{ post.like }}</td>-->
+                <td>{{count}}</td>
+                <!--<td><button class="btn btn-success" [routerLink]="['/detail',i]" routerLinkActive="router-link-active" >Love It</button></td>-->
+                <td><button class="btn btn-success" ng-click="count = count + 1" ng-init="count=0" >Love It</button></td>
+                <td><button class="btn btn-danger" [routerLink]="['/detail',i]" routerLinkActive="router-link-active" >Don't Love It</button></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
